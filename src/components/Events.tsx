@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Calendar, MapPin, Users } from "lucide-react";
+import event1 from "@/assets/event1.png";
+import event2 from "@/assets/event2.jpg";
+import event3 from "@/assets/event3.jpg";
 
 const Events = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +33,7 @@ const Events = () => {
       participants: "300+ Students",
       description:
         "We organized the AlgoZenith Club Inaugural at Vignan's Institute of Engineering for Women, marking the launch of the first-ever AlgoZenith chapter on our campus!",
-      image: "/src/assets/event1.png", // Add your event photo here
+      image: event1,
       color: "from-primary to-primary/80",
     },
     {
@@ -40,7 +43,7 @@ const Events = () => {
       participants: "300+ Students",
       description:
         "This session was expertly conducted by our recently placed students at Netwest, who shared their knowledge and experience with the participants",
-      image: "/src/assets/event2.jpg", // Add your event photo here
+      image: event2,
       color: "from-secondary to-secondary/80",
     },
     {
@@ -50,7 +53,7 @@ const Events = () => {
       participants: "250+ Students",
       description:
         "This contest provided a platform for students to sharpen their coding abilities, build confidence, and experience the true spirit of competitive programming 💻",
-      image: "/src/assets/event3.jpg", // Add your event photo here
+      image: event3,
       color: "from-accent to-accent/80",
     },
   ];
