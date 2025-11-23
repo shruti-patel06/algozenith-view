@@ -33,6 +33,14 @@ const HeroAbout = () => {
                 </a>
               </Button>
             </div>
+            {/* Mobile badge */}
+            <div className="lg:hidden mt-4 flex justify-center">
+              <div className="rounded-lg px-2 py-1 bg-white/70 dark:bg-white/10 backdrop-blur-md shadow-sm border border-white/40">
+                <p className="text-xs font-semibold">
+                  Learn • Build • Compete
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Visual */}
@@ -44,14 +52,14 @@ const HeroAbout = () => {
               <div className="absolute inset-20 rounded-2xl border border-accent/20" />
 
               {/* Floating dots */}
-              <div className="absolute top-10 left-10 w-3 h-3 rounded-full bg-primary animate-float" />
-              <div className="absolute bottom-12 right-16 w-2.5 h-2.5 rounded-full bg-secondary animate-float" style={{ animationDelay: '300ms' }} />
-              <div className="absolute top-1/2 left-1/4 w-2 h-2 rounded-full bg-accent animate-float" style={{ animationDelay: '600ms' }} />
+              <div className="hidden lg:block absolute top-10 left-10 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-primary animate-float" />
+              <div className="hidden lg:block absolute bottom-12 right-16 w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-secondary animate-float" style={{ animationDelay: '300ms' }} />
+              <div className="hidden lg:block absolute top-1/2 left-1/4 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent animate-float" style={{ animationDelay: '600ms' }} />
 
               {/* Center badge */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="rounded-xl px-4 py-3 bg-white/70 dark:bg-white/10 backdrop-blur-md shadow-sm border border-white/40">
-                  <p className="text-sm sm:text-base font-semibold">
+              <div className="hidden lg:flex absolute inset-0 items-center justify-center">
+                <div className="rounded-lg px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-3 bg-white/70 dark:bg-white/10 backdrop-blur-md shadow-sm border border-white/40">
+                  <p className="text-xs sm:text-sm md:text-base font-semibold">
                     Learn • Build • Compete
                   </p>
                 </div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 const Community = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,25 +25,18 @@ const Community = () => {
 
   const communityLinks = [
     {
-      icon: MessageCircle,
-      title: "WhatsApp Community",
-      description: "Join our WhatsApp group for daily updates and discussions",
-      color: "from-green-500 to-green-600",
-      link: "#", // Placeholder - user will provide
-    },
-    {
       icon: Instagram,
       title: "Instagram",
       description: "Follow us for behind-the-scenes content and event highlights",
       color: "from-pink-500 to-purple-600",
-      link: "#", // Placeholder - user will provide
+      link: "https://www.instagram.com/algozenith_view?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", // Updated link
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
       description: "Connect with us professionally and stay updated with opportunities",
       color: "from-blue-600 to-blue-700",
-      link: "#", // Placeholder - user will provide
+      link: "https://www.linkedin.com/in/algozenith-view-4aa2b1383/", // Updated link
     },
   ];
 
@@ -63,7 +56,7 @@ const Community = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center gap-12 sm:gap-16 lg:gap-20 max-w-5xl mx-auto">
           {communityLinks.map((item, index) => (
             <div
               key={index}
@@ -71,11 +64,11 @@ const Community = () => {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <div className="bg-card rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 h-full flex flex-col">
+              <div className="bg-card rounded-xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 h-full flex flex-col">
                 <div
-                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 sm:mb-6`}
+                  className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 sm:mb-6`}
                 >
-                  <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                  <item.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold mb-3">{item.title}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground mb-6 flex-grow">

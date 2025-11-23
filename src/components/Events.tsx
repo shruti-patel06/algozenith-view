@@ -24,40 +24,34 @@ const Events = () => {
 
   const events = [
     {
-      title: "CodeSprint 2024",
-      date: "March 15-16, 2024",
+      title: "AlgoZenith Inaugural",
+      date: "September 09, 2025",
       location: "VIEW Campus",
-      participants: "200+ Students",
+      participants: "300+ Students",
       description:
-        "24-hour hackathon focused on solving real-world problems with innovative tech solutions.",
+        "We organized the AlgoZenith Club Inaugural at Vignan's Institute of Engineering for Women, marking the launch of the first-ever AlgoZenith chapter on our campus!",
+      image: "/src/assets/event1.png", // Add your event photo here
       color: "from-primary to-primary/80",
     },
     {
-      title: "Algorithm Workshop",
-      date: "Every Saturday",
-      location: "Online & Offline",
-      participants: "50+ Students",
+      title: "DSA and CP session",
+      date: "September 09, 2025",
+      location: "VIEW Campus",
+      participants: "300+ Students",
       description:
-        "Weekly intensive sessions on competitive programming and advanced algorithms.",
+        "This session was expertly conducted by our recently placed students at Netwest, who shared their knowledge and experience with the participants",
+      image: "/src/assets/event2.jpg", // Add your event photo here
       color: "from-secondary to-secondary/80",
     },
     {
-      title: "Tech Talk Series",
-      date: "Monthly",
-      location: "Auditorium",
-      participants: "300+ Students",
+      title: "Coding Contest",
+      date: "September 12, 2025",
+      location: "VIEW Campus",
+      participants: "250+ Students",
       description:
-        "Industry experts share insights on emerging technologies and career opportunities.",
+        "This contest provided a platform for students to sharpen their coding abilities, build confidence, and experience the true spirit of competitive programming 💻",
+      image: "/src/assets/event3.jpg", // Add your event photo here
       color: "from-accent to-accent/80",
-    },
-    {
-      title: "Women in Tech Summit",
-      date: "April 28, 2024",
-      location: "Convention Center",
-      participants: "500+ Attendees",
-      description:
-        "Annual summit celebrating achievements of women in technology and fostering networking.",
-      color: "from-primary via-secondary to-accent",
     },
   ];
 
@@ -88,13 +82,31 @@ const Events = () => {
               }`}
             >
               <div className="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
-                {/* Gradient Header */}
-                <div className={`h-48 bg-gradient-to-br ${event.color} p-6 flex items-end`}>
-                  <h3 className="text-2xl font-bold text-white">{event.title}</h3>
+                {/* Event Image */}
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${
+                      event.title === "AlgoZenith Inaugural" ? "object-[center_80%]" : 
+                      event.title === "DSA and CP session" ? "object-[center_70%]" :
+                      event.title === "Coding Contest" ? "object-[center_40%]" : ""
+                    }`}
+                    onError={(e) => {
+                      // Fallback to gradient if image fails to load
+                      e.currentTarget.style.display = 'none';
+                      e.currentTarget.parentElement!.innerHTML = `
+                        <div class="h-48 bg-gradient-to-br ${event.color} p-6 flex items-end">
+                          <h3 class="text-2xl font-bold text-white">${event.title}</h3>
+                        </div>
+                      `;
+                    }}
+                  />
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
+                  <h3 className="text-xl font-bold mb-4 text-foreground">{event.title}</h3>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Calendar className="w-4 h-4 text-primary" />

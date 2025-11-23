@@ -89,24 +89,26 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.section === "home" ? "/" : `/${link.section}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-left font-medium py-2 transition-colors text-foreground hover:text-primary`}
-                >
-                  {link.name}
+            <div className="bg-background/95 backdrop-blur-md rounded-lg p-4 shadow-lg">
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.section === "home" ? "/" : `/${link.section}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-left font-medium py-2 transition-colors text-foreground hover:text-primary`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                <Link to="/community" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button 
+                    className="btn-gradient w-full mt-2"
+                  >
+                    Join Us
+                  </Button>
                 </Link>
-              ))}
-              <Link to="/community" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button 
-                  className="btn-gradient w-full mt-2"
-                >
-                  Join Us
-                </Button>
-              </Link>
+              </div>
             </div>
           </div>
         )}

@@ -61,94 +61,85 @@ const Team = () => {
 
   const teamMembers: TeamMember[] = [
     {
-      name: "Priya Sharma",
+      name: "Neelam Reethika",
       role: "Lead",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: "images/team/Reethika.jpg",
       description: "Priya is a passionate coder and leader who drives the vision of AlgoZenith VIEW. With expertise in competitive programming and team management, she mentors students to excel in coding competitions and leads the club towards new heights of innovation.",
       linkedin: "#",
       github: "#",
       email: "priya@view.edu.in",
     },
     {
-      name: "Anjali Reddy",
+      name: "P.Bhasini",
       role: "Co-Lead",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+      image: "images/team/Bhasini.jpg",
       description: "Anjali supports the club's operations and coordinates between different teams. Her organizational skills and technical knowledge in algorithms make her an invaluable asset in planning workshops and hackathons.",
       linkedin: "#",
       github: "#",
       email: "anjali@view.edu.in",
     },
     {
-      name: "Sneha Patel",
-      role: "Competitive Programming Lead",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-      description: "Sneha specializes in competitive programming with multiple wins in national coding competitions. She conducts intensive training sessions and guides students in mastering advanced algorithms and problem-solving techniques.",
-      linkedin: "#",
-      github: "#",
-      email: "sneha@view.edu.in",
+      name: "Hanumanthu Pavithra",
+      role: "CP Lead",
+      image: "images/team/Pavithra.jpg",
+      description: "I’m Pavitra Hanumanthu, passionate about coding, networking, and cloud security. I aim to build a safer digital world and share what I learn.",
+      linkedin: "https://www.linkedin.com/in/pavitra-hanumanthu-164192328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/HanumanthuPavitra",
+      email: "hpavitra257@gmail.com",
     },
     {
-      name: "Kavya Krishna",
-      role: "DSA Lead",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop",
+      name: "Ashmitha Nalla",
+      role: "Graphic Designer",
+      image: "images/team/Ashmitha.jpg",
       description: "Kavya leads the Data Structures and Algorithms wing, creating comprehensive learning paths for students. Her expertise in teaching complex DSA concepts in simple terms helps students build strong foundations.",
       linkedin: "#",
       github: "#",
       email: "kavya@view.edu.in",
     },
     {
-      name: "Divya Nair",
-      role: "UI/UX Lead",
-      image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop",
+      name: "Jeeru Pratyusha",
+      role: "Graphic Desingner",
+      image: "images/team/Pratyusha.jpg",
       description: "Divya brings creative excellence to the club with her exceptional UI/UX design skills. She leads design workshops and ensures all club projects have beautiful, user-friendly interfaces.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/pratyusha-reddy-jeeru-b34845340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "#",
       email: "divya@view.edu.in",
     },
     {
-      name: "Meera Gupta",
-      role: "Graphic Designer Lead",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-      description: "Meera is responsible for all visual content and branding of AlgoZenith VIEW. Her creative designs enhance the club's social media presence and event promotions.",
-      linkedin: "#",
-      github: "#",
-      email: "meera@view.edu.in",
+      name: "Shruti Patel",
+      role: "UI/UX Designer",
+      image: "images/team/Shruti.jpg",
+      description: "I enjoy contributing to team projects and collaborating to ensure my designs are always clear and user-focused.",
+      linkedin: "https://www.linkedin.com/in/shruti-patel06/",
+      github: "https://github.com/shruti-patel06",
+      email: "shruti.8717@gmail.com",
     },
     {
-      name: "Isha Verma",
-      role: "Social Media Manager",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop",
+      name: "Neelima Sree",
+      role: "Media and Content Lead ",
+      image: "images/team/Neelima.jpg",
       description: "Isha manages the club's online presence and engagement. She creates compelling content that showcases achievements and keeps the community informed about upcoming events and opportunities.",
       linkedin: "#",
       github: "#",
       email: "isha@view.edu.in",
     },
     {
-      name: "Riya Kumar",
-      role: "Event Manager",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop",
+      name: "A.Sahithi Aravinda",
+      role: "Media and Content Manager",
+      image: "images/team/Sahithi.jpg",
       description: "Riya orchestrates all club events from hackathons to workshops. Her attention to detail and coordination skills ensure every event runs smoothly and creates lasting impact on participants.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/attili-sahithi-aravinda-a82706273?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: "#",
       email: "riya@view.edu.in",
     },
     {
-      name: "Aaradhya Singh",
-      role: "Outreach Lead",
-      image: "https://images.unsplash.com/photo-1554080353-a576cf803bda?w=400&h=400&fit=crop",
-      description: "Aaradhya builds partnerships and drives campus engagement. She leads outreach programs and collaborations with industry and student bodies.",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://github.com/",
-      email: "aaradhya@view.edu.in",
-    },
-    {
-      name: "Neha Rao",
-      role: "Content & Media Lead",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
-      description: "Neha leads content strategy and media production for the club. She tells our story through compelling visuals and copy across channels.",
-      linkedin: "https://www.linkedin.com/",
-      github: "https://github.com/",
-      email: "neha@view.edu.in",
+      name: "Nallamilli Vineela",
+      role: "Event Planner",
+      image: "images/team/Vineela.jpg",
+      description: "I am Vineela Reddy, an aspiring AI undergrad engineer skilled in clear explanation, quick problem-solving, and effective interaction with people. I love combining my technical curiosity with strong communication to create meaningful and practical AI solutions.",
+      linkedin: "https://www.linkedin.com/in/vineela-reddy-1270332b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/vineelareddy984",
+      email: "vineelareddy984@gmail.com",
     },
   ];
 
@@ -162,7 +153,11 @@ const Team = () => {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            {typewriterText || "Meet Our"} <span className="text-gradient">{typewriterText ? "Team" : ""}</span>
+            {typewriterText ? (
+              typewriterText.includes("Team") ? (
+                <>Meet Our <span className="text-primary">Team</span></>
+              ) : typewriterText
+            ) : "Meet Our"}
             {showCursor && <span className="animate-pulse text-primary/60">|</span>}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground">
@@ -171,7 +166,7 @@ const Team = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-0 xl:gap-12 place-items-center">
           {teamMembers.map((member, index) => (
             <div
               key={index}
@@ -179,7 +174,7 @@ const Team = () => {
                 (index % 4) * 100
               } ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              } ${index >= teamMembers.length - 2 ? "lg:col-span-1 xl:col-span-2" : ""}`}
+              } ${index === 0 || index === 1 ? "lg:col-span-5" : index >= 2 && index <= 5 ? "lg:col-span-3" : "lg:col-span-4"}`}
             >
               {/* Profile Image */}
               <div 
@@ -190,7 +185,7 @@ const Team = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:filter group-hover:blur-md transition-all duration-300"
+                    className={`w-full h-full object-cover ${(member.name === "Hanumanthu Pavithra" || member.name === "P.Bhasini") ? "object-[center_20%]" : ""} ${member.name === "Ashmitha Nalla" ? "object-[25%_center] scale-105" : ""} ${member.name === "Shruti Patel" ? "scale-98" : ""} ${member.name === "Neelam Reethika" ? "scale-110" : ""} ${member.name === "Sahithi Aravinda" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${member.name === "Jeeru Pratyusha" ? "brightness-90 contrast-110" : ""} ${member.name === "Neelima Sree" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} group-hover:filter group-hover:blur-md transition-all duration-300`}
                   />
                   {/* Social Links Overlay */}
                   <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-4">
@@ -250,7 +245,7 @@ const Team = () => {
                   <img
                     src={selectedMember.image}
                     alt={selectedMember.name}
-                    className="w-48 h-48 rounded-full object-cover ring-4 ring-primary/20"
+                    className={`w-48 h-48 rounded-full object-cover ring-4 ring-primary/20 ${(selectedMember.name === "Hanumanthu Pavithra" || selectedMember.name === "P.Bhasini") ? "object-[center_20%]" : ""} ${selectedMember.name === "Ashmitha Nalla" ? "object-[25%_center] scale-105" : ""} ${selectedMember.name === "Shruti Patel" ? "scale-98" : ""} ${selectedMember.name === "Neelam Reethika" ? "scale-110" : ""} ${selectedMember.name === "Sahithi Aravinda" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${selectedMember.name === "Jeeru Pratyusha" ? "brightness-90 contrast-110" : ""} ${selectedMember.name === "Neelima Sree" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""}`}
                   />
                 </div>
                 

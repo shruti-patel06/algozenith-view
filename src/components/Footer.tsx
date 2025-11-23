@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, Instagram, Mail } from "lucide-react";
 import azLogo from "@/assets/az-logo.svg";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,6 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: MessageCircle, href: "#", label: "WhatsApp" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/algozenith-view-4aa2b1383/", label: "LinkedIn" },
     { icon: Instagram, href: "https://www.instagram.com/algozenith_view/", label: "Instagram" },
   ];
@@ -71,7 +70,7 @@ const Footer = () => {
             <div className="mt-6 space-y-2">
               <p className="text-sm sm:text-base text-background/80">
                 <span className="font-semibold">Email:</span>{" "}
-                algozenith@view.edu.in
+                algozenith302@gmail.com
               </p>
             </div>
           </div>
