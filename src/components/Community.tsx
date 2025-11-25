@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 const Community = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,6 +38,13 @@ const Community = () => {
       color: "from-blue-600 to-blue-700",
       link: "https://www.linkedin.com/in/algozenith-view-4aa2b1383/", // Updated link
     },
+    {
+      icon: Youtube,
+      title: "YouTube",
+      description: "Watch our tutorials, talks, and event recordings",
+      color: "from-red-500 to-red-600",
+      link: "https://youtube.com/@algozenith2k25?si=flvDpWzK80uHlpXw",
+    },
   ];
 
   return (
@@ -56,7 +63,7 @@ const Community = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-12 sm:gap-16 lg:gap-20 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {communityLinks.map((item, index) => (
             <div
               key={index}

@@ -22,6 +22,7 @@ const Team = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [typewriterText, setTypewriterText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
+  const [overlayMember, setOverlayMember] = useState<TeamMember | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -42,6 +43,12 @@ const Team = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (selectedMember) {
+      setOverlayMember(null);
+    }
+  }, [selectedMember]);
 
   const startTypewriter = () => {
     const text = "Meet Our Team";
@@ -64,7 +71,7 @@ const Team = () => {
       name: "Neelam Reethika",
       role: "Lead",
       image: "images/team/Reethika.jpg",
-      description: "Priya is a passionate coder and leader who drives the vision of AlgoZenith VIEW. With expertise in competitive programming and team management, she mentors students to excel in coding competitions and leads the club towards new heights of innovation.",
+      description: "#",
       linkedin: "#",
       github: "#",
       email: "priya@view.edu.in",
@@ -73,10 +80,10 @@ const Team = () => {
       name: "P.Bhasini",
       role: "Co-Lead",
       image: "images/team/Bhasini.jpg",
-      description: "Anjali supports the club's operations and coordinates between different teams. Her organizational skills and technical knowledge in algorithms make her an invaluable asset in planning workshops and hackathons.",
-      linkedin: "#",
-      github: "#",
-      email: "anjali@view.edu.in",
+      description: "I am P Bhashini, With a growing interest in Data Science and AI, I work as a Co-Lead at AlgoZenith, helping learners strengthen their technical foundations and explore real-world problem-solving.",
+      linkedin: "https://www.linkedin.com/in/bhashini-p?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/Bhashini-git",
+      email: "bhashinip1006@gmail.com",
     },
     {
       name: "Hanumanthu Pavithra",
@@ -91,19 +98,19 @@ const Team = () => {
       name: "Ashmitha Nalla",
       role: "Graphic Designer",
       image: "images/team/Ashmitha.jpg",
-      description: "Kavya leads the Data Structures and Algorithms wing, creating comprehensive learning paths for students. Her expertise in teaching complex DSA concepts in simple terms helps students build strong foundations.",
+      description: "I am Asmitha Nalla, passionate about turning ideas into code, networking and cloud computing. I’m excited to collaborate on open-source projects.",
       linkedin: "#",
-      github: "#",
-      email: "kavya@view.edu.in",
+      github: "https://share.google/7ZaXAAXoGJHyr5w9Y",
+      email: "asmithanalla04@gmail.com",
     },
     {
       name: "Jeeru Pratyusha",
       role: "Graphic Desingner",
       image: "images/team/Pratyusha.jpg",
-      description: "Divya brings creative excellence to the club with her exceptional UI/UX design skills. She leads design workshops and ensures all club projects have beautiful, user-friendly interfaces.",
+      description: "I’m Pratyusha Reddy, a graphic Designer dedicated to creating digital designs and translating it into designs that communicate with purpose.  understanding what users actually need, and shaping it into a clean, thoughtful digital experience.",
       linkedin: "https://www.linkedin.com/in/pratyusha-reddy-jeeru-b34845340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      github: "#",
-      email: "divya@view.edu.in",
+      github: "https://github.com/jeerupratyushareddy",
+      email: "jeerupratyushareddy@gmail.com",
     },
     {
       name: "Shruti Patel",
@@ -116,21 +123,21 @@ const Team = () => {
     },
     {
       name: "Neelima Sree",
-      role: "Media and Content Lead ",
+      role: "Media and Content Lead",
       image: "images/team/Neelima.jpg",
-      description: "Isha manages the club's online presence and engagement. She creates compelling content that showcases achievements and keeps the community informed about upcoming events and opportunities.",
-      linkedin: "#",
-      github: "#",
-      email: "isha@view.edu.in",
+      description: " I am Neelima,I handle content creation, social media posts, and designs, ensuring clear and engaging communication. With a creative approach, I help build our brand identity and keep the community actively engaged.",
+      linkedin: "https://www.linkedin.com/in/neelima-sree-063465342?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      github: "https://github.com/Neelima0727",
+      email: "neelimasreeg@gmail.com",
     },
     {
       name: "A.Sahithi Aravinda",
       role: "Media and Content Manager",
       image: "images/team/Sahithi.jpg",
-      description: "Riya orchestrates all club events from hackathons to workshops. Her attention to detail and coordination skills ensure every event runs smoothly and creates lasting impact on participants.",
+      description: " ",
       linkedin: "https://www.linkedin.com/in/attili-sahithi-aravinda-a82706273?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       github: "#",
-      email: "riya@view.edu.in",
+      email: "sahithiaravinda@gmail.com",
     },
     {
       name: "Nallamilli Vineela",
@@ -160,8 +167,8 @@ const Team = () => {
             ) : "Meet Our"}
             {showCursor && <span className="animate-pulse text-primary/60">|</span>}
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground">
-            The passionate leaders driving innovation and excellence
+          <p className="text-lg sm:text-xl font-bold text-blue-900">
+            2025
           </p>
         </div>
 
@@ -170,25 +177,25 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center text-center group transition-all duration-700 delay-${
+              className={`flex flex-col items-center text-center transition-all duration-700 delay-${
                 (index % 4) * 100
               } ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               } ${index === 0 || index === 1 ? "lg:col-span-5" : index >= 2 && index <= 5 ? "lg:col-span-3" : "lg:col-span-4"}`}
             >
               {/* Profile Image */}
-              <div 
-                className="relative mb-6 cursor-pointer"
-                onClick={() => setSelectedMember(member)}
-              >
-                <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-3 sm:ring-4 ring-muted group-hover:ring-primary transition-all duration-300 group-hover:scale-105">
+              <div className="relative mb-6">
+                <div 
+                  className={`w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-3 sm:ring-4 ${overlayMember === member ? "ring-primary scale-105" : "ring-muted"} transition-all duration-300 cursor-pointer`}
+                  onClick={(e) => { e.stopPropagation(); setOverlayMember(member === overlayMember ? null : member); }}
+                >
                   <img
                     src={member.image}
                     alt={member.name}
-                    className={`w-full h-full object-cover ${(member.name === "Hanumanthu Pavithra" || member.name === "P.Bhasini") ? "object-[center_20%]" : ""} ${member.name === "Ashmitha Nalla" ? "object-[25%_center] scale-105" : ""} ${member.name === "Shruti Patel" ? "scale-98" : ""} ${member.name === "Neelam Reethika" ? "scale-110" : ""} ${member.name === "Sahithi Aravinda" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${member.name === "Jeeru Pratyusha" ? "brightness-90 contrast-110" : ""} ${member.name === "Neelima Sree" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} group-hover:filter group-hover:blur-md transition-all duration-300`}
+                    className={`w-full h-full object-cover ${(member.name === "Hanumanthu Pavithra" || member.name === "P.Bhasini") ? "object-[center_20%]" : ""} ${member.name === "Ashmitha Nalla" ? "object-[25%_center] scale-105" : ""} ${member.name === "Shruti Patel" ? "scale-98" : ""} ${member.name === "Neelam Reethika" ? "scale-110" : ""} ${member.name === "Sahithi Aravinda" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${member.name === "Jeeru Pratyusha" ? "brightness-90 contrast-110" : ""} ${member.name === "Neelima Sree" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${overlayMember === member ? "filter blur-md" : ""} transition-all duration-300`}
                   />
                   {/* Social Links Overlay */}
-                  <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-4">
+                  <div className={`absolute inset-0 rounded-full bg-white/10 backdrop-blur-md ${overlayMember === member ? "opacity-100" : "opacity-0"} transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-4`}>
                     <a
                       href={member.linkedin}
                       onClick={(e) => e.stopPropagation()}
@@ -218,7 +225,7 @@ const Team = () => {
               </div>
 
               {/* Member Info */}
-              <h3 className="text-xl font-bold mb-2 group-hover:text-black group-hover:underline decoration-gray-600 decoration-2 underline-offset-4 transition-all duration-300">
+              <h3 className="text-xl font-bold mb-2 cursor-pointer transition-all duration-300" onClick={() => setSelectedMember(member)}>
                 {member.name}
               </h3>
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
