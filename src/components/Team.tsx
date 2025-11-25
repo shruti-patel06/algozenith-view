@@ -22,7 +22,6 @@ const Team = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [typewriterText, setTypewriterText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const [overlayMember, setOverlayMember] = useState<TeamMember | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -43,12 +42,6 @@ const Team = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (selectedMember) {
-      setOverlayMember(null);
-    }
-  }, [selectedMember]);
 
   const startTypewriter = () => {
     const text = "Meet Our Team";
@@ -116,7 +109,7 @@ const Team = () => {
       name: "Shruti Patel",
       role: "UI/UX Designer",
       image: "images/team/Shruti.jpg",
-      description: "I enjoy contributing to team projects and collaborating to ensure my designs are always clear and user-focused.",
+      description: "I'm a beginner UI/UX designer still figuring things out with Figma. I care about making things simple and actually usable.",
       linkedin: "https://www.linkedin.com/in/shruti-patel06/",
       github: "https://github.com/shruti-patel06",
       email: "shruti.8717@gmail.com",
@@ -177,7 +170,7 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center text-center transition-all duration-700 delay-${
+              className={`flex flex-col items-center text-center group transition-all duration-700 delay-${
                 (index % 4) * 100
               } ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -186,16 +179,16 @@ const Team = () => {
               {/* Profile Image */}
               <div className="relative mb-6">
                 <div 
-                  className={`w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-3 sm:ring-4 ${overlayMember === member ? "ring-primary scale-105" : "ring-muted"} transition-all duration-300 cursor-pointer`}
-                  onClick={(e) => { e.stopPropagation(); setOverlayMember(member === overlayMember ? null : member); }}
+                  className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 lg:w-48 lg:h-48 rounded-full overflow-hidden ring-3 sm:ring-4 ring-muted group-hover:ring-primary transition-all duration-300 cursor-pointer group-hover:scale-105"
+                  onClick={() => setSelectedMember(member)}
                 >
                   <img
                     src={member.image}
                     alt={member.name}
-                    className={`w-full h-full object-cover ${(member.name === "Hanumanthu Pavithra" || member.name === "P.Bhasini") ? "object-[center_20%]" : ""} ${member.name === "Ashmitha Nalla" ? "object-[25%_center] scale-105" : ""} ${member.name === "Shruti Patel" ? "scale-98" : ""} ${member.name === "Neelam Reethika" ? "scale-110" : ""} ${member.name === "Sahithi Aravinda" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${member.name === "Jeeru Pratyusha" ? "brightness-90 contrast-110" : ""} ${member.name === "Neelima Sree" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${overlayMember === member ? "filter blur-md" : ""} transition-all duration-300`}
+                    className={`w-full h-full object-cover ${(member.name === "Hanumanthu Pavithra" || member.name === "P.Bhasini") ? "object-[center_20%]" : ""} ${member.name === "Ashmitha Nalla" ? "object-[25%_center] scale-105" : ""} ${member.name === "Shruti Patel" ? "scale-98" : ""} ${member.name === "Neelam Reethika" ? "scale-110" : ""} ${member.name === "Sahithi Aravinda" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} ${member.name === "Jeeru Pratyusha" ? "brightness-90 contrast-110" : ""} ${member.name === "Neelima Sree" ? "scale-105 brightness-105 contrast-105 saturate-110" : ""} group-hover:filter group-hover:blur-md transition-all duration-300`}
                   />
                   {/* Social Links Overlay */}
-                  <div className={`absolute inset-0 rounded-full bg-white/10 backdrop-blur-md ${overlayMember === member ? "opacity-100" : "opacity-0"} transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-4`}>
+                  <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 sm:gap-3 lg:gap-4">
                     <a
                       href={member.linkedin}
                       onClick={(e) => e.stopPropagation()}
@@ -225,7 +218,7 @@ const Team = () => {
               </div>
 
               {/* Member Info */}
-              <h3 className="text-xl font-bold mb-2 cursor-pointer transition-all duration-300" onClick={() => setSelectedMember(member)}>
+              <h3 className="text-xl font-bold mb-2 cursor-pointer group-hover:text-black group-hover:underline decoration-gray-600 decoration-2 underline-offset-4 transition-all duration-300">
                 {member.name}
               </h3>
               <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
