@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Mail } from "lucide-react";
+import { Linkedin, Instagram, Mail, Youtube } from "lucide-react";
 import azLogo from "@/assets/az-logo.svg";
 import { Link } from "react-router-dom";
 
@@ -16,6 +16,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/algozenith-view-4aa2b1383/", label: "LinkedIn" },
     { icon: Instagram, href: "https://www.instagram.com/algozenith_view/", label: "Instagram" },
+    { icon: Youtube, href: "https://youtube.com/@algozenith2k25?si=flvDpWzK80uHlpXw", label: "YouTube" },
   ];
 
   const toPath = (section: string) => (section === "home" ? "/" : `/${section}`);
