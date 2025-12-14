@@ -3,6 +3,7 @@ import { Calendar, MapPin, Users } from "lucide-react";
 import event1 from "@/assets/event1.png";
 import event2 from "@/assets/event2.jpg";
 import event3 from "@/assets/event3.jpg";
+import event4 from "@/assets/event4.jpg";
 
 const Events = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,13 +58,13 @@ const Events = () => {
       color: "from-accent to-accent/80",
     },
     {
-      title: "Workshop on AI and ML",
-      date: "October 15, 2025",
+      title: "Guest Lecture",
+      date: "December 9, 2025",
       location: "VIEW Campus",
-      participants: "200+ Students",
+      participants: "350+ Students",
       description:
-        "An interactive workshop introducing the fundamentals of Artificial Intelligence and Machine Learning, with hands-on sessions and expert speakers.",
-      image: event1, // Placeholder image, replace with actual event image
+        "The session was led by 𝐌𝐫. 𝐏. 𝐉𝐚𝐧𝐚𝐤𝐢 𝐑𝐚𝐦𝐮𝐝𝐮, DevOps Engineer & Software Developer at 𝐓𝐂𝐒, with 𝟏𝟎+ 𝐲𝐞𝐚𝐫𝐬 𝐨𝐟 𝐢𝐧𝐝𝐮𝐬𝐭𝐫𝐲 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞. He shared valuable insights on product thinking, full-stack development, DSA and problem-solving, software engineering, essential industry skills, and career direction 💡",
+      image: event4,
       color: "from-green-500 to-green-600",
     },
   ];
@@ -103,7 +104,8 @@ const Events = () => {
                     className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${
                       event.title === "AlgoZenith Inaugural" ? "object-[center_80%]" : 
                       event.title === "DSA and CP session" ? "object-[center_70%]" :
-                      event.title === "Coding Contest" ? "object-[center_40%]" : ""
+                      event.title === "Coding Contest" ? "object-[center_40%]" :
+                      event.title === "Guest Lecture" ? "object-[center_85%]" : ""
                     }`}
                     onError={(e) => {
                       // Fallback to gradient if image fails to load
