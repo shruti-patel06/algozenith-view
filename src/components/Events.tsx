@@ -56,6 +56,16 @@ const Events = () => {
       image: event3,
       color: "from-accent to-accent/80",
     },
+    {
+      title: "Workshop on AI and ML",
+      date: "October 15, 2025",
+      location: "VIEW Campus",
+      participants: "200+ Students",
+      description:
+        "An interactive workshop introducing the fundamentals of Artificial Intelligence and Machine Learning, with hands-on sessions and expert speakers.",
+      image: event1, // Placeholder image, replace with actual event image
+      color: "from-green-500 to-green-600",
+    },
   ];
 
   return (
